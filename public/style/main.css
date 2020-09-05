@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300@500@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,400&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
 
 html, body {
   width: 100%;
-  font-family: "Nunito", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -16,13 +16,16 @@ html, body {
 
 .sidebar {
   display: flex;
+  position: sticky;
   flex-direction: column;
   flex: 1;
-  padding: 10px 8px;
+  width: 50px;
+  top: 0;
+  padding: 0px 7px;
   align-items: center;
   background: linear-gradient(to bottom, #1434e9, #273aa2);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  min-height: calc(100vh - 20px);
+  height: calc(100vh - 10px);
 }
 .sidebar .icon img {
   filter: invert(1) drop-shadow(6px 6px 0px #fff5);
@@ -44,7 +47,7 @@ html, body {
   align-items: center;
   justify-content: center;
   color: white;
-  padding: 2px 12px;
+  padding: 2px 5px;
   font-size: 10pt;
   border-radius: 10px;
 }
@@ -53,23 +56,29 @@ html, body {
   filter: invert(1);
 }
 .sidebar ul li.selected, .sidebar ul li:hover {
-  background: #334fe8db;
+  background: #1027acdb;
 }
 .sidebar ul li:last-child {
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   flex: 90%;
-  padding: 30px 40px;
+  padding: 20px 10px;
+}
+.content .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 .content .grid {
   display: flex;
   justify-content: space-between;
-  margin: 30px;
+  flex: 50%;
+  flex-wrap: wrap;
 }
 .content .grid .col {
   display: flex;
@@ -77,6 +86,8 @@ html, body {
   align-items: center;
   flex-direction: column;
   margin-left: 10px;
+  min-width: 150px;
+  position: relative;
 }
 .content .grid .col:nth-child(1) {
   background: #f0f0f0;
@@ -90,11 +101,13 @@ html, body {
 .content .grid .col:nth-child(4) {
   background: #4caf502b;
 }
+.content .grid .col:nth-child(4) .tasks .card {
+  background: repeating-linear-gradient(45deg, #fff, #fff 10px, #3f51b529 15px);
+}
 .content .grid .col .header {
-  width: 100%;
+  width: 80%;
   display: flex;
-  justify-content: center;
-  padding: 15px 0;
+  padding: 15px 10%;
   margin-bottom: 3px;
   font-weight: normal;
   font-size: 12pt;
@@ -107,32 +120,31 @@ html, body {
 }
 .content .grid .col .header::after {
   content: "";
-  width: 10%;
+  width: 20px;
   height: 100%;
   display: block;
   position: absolute;
-  background: #ffd700a6;
+  background: orange;
   right: 0;
   top: 0px;
 }
-.content .grid .col .header::before {
-  content: "";
-  width: 30px;
-  height: 30px;
+.content .grid .col .footer {
   position: absolute;
-  left: 5px;
-  top: 5px;
-  background-image: url(https://www.iconfinder.com/data/icons/christmas-flat-4/58/019_-_Star-512.png);
-  background-size: cover;
-  margin: 0 auto;
+  bottom: 0px;
+  background: orange;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .content .grid .col .tasks {
   flex-direction: column;
-  width: 100%;
   display: flex;
-  height: 600px;
+  height: 400px;
   overflow: auto;
   align-items: center;
+  width: 100%;
 }
 .content .grid .col .tasks .card {
   display: flex;
@@ -142,8 +154,10 @@ html, body {
   background: white;
   margin: 10px 0px;
   border-radius: 5px;
-  width: 80%;
   cursor: grab;
+}
+.content .grid .col .tasks .card:hover {
+  animation: 1s swing 1s infinite;
 }
 .content .grid .col .tasks .card:active {
   cursor: grabbing;
@@ -152,8 +166,10 @@ html, body {
   opacity: 0.5;
   transform: scale(0.8);
 }
+.content .grid .col .tasks .card.selected {
+  border-left: 4px solid orange;
+}
 .content .grid .col .tasks .card h4.title {
-  letter-spacing: 2px;
   position: relative;
 }
 .content .grid .col .tasks .card h4.title::after {
@@ -172,19 +188,121 @@ html, body {
   font-size: 9pt;
   padding: 10px;
 }
-.content .grid .col .tasks .card .members {
+.content .task-container {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  padding: 10px;
+  margin-left: 10px;
   flex: 1;
+  border-radius: 5px;
+  background: #f8f8f8;
+  justify-content: center;
+}
+.content .task-container .task-title {
+  position: relative;
+  left: 30px;
+}
+.content .task-container .task-title small {
+  color: gray;
+}
+.content .task-container .task-title::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: -20px;
+  top: 3px;
+  background-image: url(https://www.iconfinder.com/data/icons/christmas-flat-4/58/019_-_Star-512.png);
+  background-size: cover;
+  margin: 0 auto;
+}
+.content .task-container .task-info {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  justify-content: space-between;
+}
+.content .task-container .task-info div {
+  margin: 10px 0px;
+  display: flex;
   align-items: center;
 }
-.content .grid .col .tasks .card .members img, .content .grid .col .tasks .card .members .extra {
+.content .task-container .task-info div.disc {
+  display: contents;
+}
+.content .task-container .task-info div.attaches a.attch {
+  background: #ff57226e;
+  height: 50px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  cursor: pointer;
+}
+.content .task-container .task-info label {
+  color: gray;
+  margin-right: 10px;
+}
+.content .task-container .chat {
+  display: flex;
+  flex-direction: column;
+  border: 1px dashed #888;
+  min-height: 200px;
+  position: relative;
+}
+.content .task-container .chat .chat-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+}
+.content .task-container .chat .chat-input input {
+  border: none;
+  border-bottom: 1px solid #3F51B5;
+  height: 20px;
+  width: 80%;
+  background: transparent;
+  margin-left: 10px;
+}
+.content .task-container .chat .chat-input button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.content .task-container .chat .chat-input button img {
+  width: 30px;
+}
+
+.members {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.members img, .members .extra {
   border-radius: 50%;
   width: 32px;
   height: 32px;
-  background: #eaeaea;
-  margin: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.members .extra {
+  background: #eaeaea;
+}
+
+@keyframes swing {
+  from {
+    position: relative;
+    left: 0px;
+  }
+  to {
+    position: relative;
+    left: 10px;
+  }
 }

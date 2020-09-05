@@ -37,12 +37,27 @@
         </div>
         <div class="content">
             <h3 class="header">Dashboard</h3>
+            
+            <div class="container">
             <div class="grid">
                 <div class="col">
                     <div class="header">New</div>
-                    <div class="tasks">
-                        <div class="card" draggable="true">
-                            <h4 class="title">Title</h4>
+                    <div class="tasks"  ondrop="return dragDrop(event)" ondragover="dragOver(event)">
+                        <div class="card">
+                            <h5 class="title">Title</h5>
+                            <h6>SubTitle</h6>
+                            <span class="members">
+                                <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-01-256.png"/>
+                                <img src="https://cdn0.iconfinder.com/data/icons/famous-character-vol-2-colored/48/JD-02-128.png"/>
+                                <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-08-256.png"/>
+                                <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-22-256.png"/>
+                                <div class="extra">
+                                    +6
+                                </div>
+                            </span>
+                        </div>
+                        <div class="card selected">
+                            <h5 class="title">Title</h5>
                             <h6>SubTitle</h6>
                             <span class="members">
                                 <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-01-256.png"/>
@@ -55,7 +70,7 @@
                             </span>
                         </div>
                         <div class="card">
-                            <h4 class="title">Title</h4>
+                            <h5 class="title">Title</h5>
                             <h6>SubTitle</h6>
                             <span class="members">
                                 <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-01-256.png"/>
@@ -68,7 +83,7 @@
                             </span>
                         </div>
                         <div class="card">
-                            <h4 class="title">Title</h4>
+                            <h5 class="title">Title</h5>
                             <h6>SubTitle</h6>
                             <span class="members">
                                 <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-01-256.png"/>
@@ -81,7 +96,7 @@
                             </span>
                         </div>
                         <div class="card">
-                            <h4 class="title">Title</h4>
+                            <h5 class="title">Title</h5>
                             <h6>SubTitle</h6>
                             <span class="members">
                                 <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-01-256.png"/>
@@ -94,7 +109,7 @@
                             </span>
                         </div>
                         <div class="card">
-                            <h4 class="title">Title</h4>
+                            <h5 class="title">Title</h5>
                             <h6>SubTitle</h6>
                             <span class="members">
                                 <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-01-256.png"/>
@@ -107,20 +122,7 @@
                             </span>
                         </div>
                         <div class="card">
-                            <h4 class="title">Title</h4>
-                            <h6>SubTitle</h6>
-                            <span class="members">
-                                <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-01-256.png"/>
-                                <img src="https://cdn0.iconfinder.com/data/icons/famous-character-vol-2-colored/48/JD-02-128.png"/>
-                                <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-08-256.png"/>
-                                <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-22-256.png"/>
-                                <div class="extra">
-                                    +6
-                                </div>
-                            </span>
-                        </div>
-                        <div class="card">
-                            <h4 class="title">Title</h4>
+                            <h5 class="title">Title</h5>
                             <h6>SubTitle</h6>
                             <span class="members">
                                 <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-01-256.png"/>
@@ -133,23 +135,89 @@
                             </span>
                         </div>
                     </div>
+                    <div class="footer">
+                        <img src="https://cdn2.iconfinder.com/data/icons/budicon-interface-layout-2/16/21-interface_-_plus_add-256.png" width="20"> Add New Task
+                    </div>
                 </div>
                 <div class="col">
                     <div class="header">In Progress</div>
-                    <div class="tasks"></div>
+                    <div class="tasks"  ondrop="return dragDrop(event)" ondragover="dragOver(event)"></div>
+                    <div class="footer">
+                        <img src="https://cdn2.iconfinder.com/data/icons/budicon-interface-layout-2/16/21-interface_-_plus_add-256.png" width="20"> Add New Task
+                    </div>
                 </div>
                 <div class="col">
                     <div class="header">QA Stage</div>
-                    <div class="tasks"></div>
+                    <div class="tasks"  ondrop="return dragDrop(event)" ondragover="dragOver(event)"></div>
+                    <div class="footer">
+                        <img src="https://cdn2.iconfinder.com/data/icons/budicon-interface-layout-2/16/21-interface_-_plus_add-256.png" width="20"> Add New Task
+                    </div>
                 </div>
                 <div class="col">
                     <div class="header">Done</div>
-                    <div class="tasks"></div>
+                    <div class="tasks"  ondrop="return dragDrop(event)" ondragover="dragOver(event)"></div>
+                    <div class="footer">
+                        <img src="https://cdn2.iconfinder.com/data/icons/budicon-interface-layout-2/16/21-interface_-_plus_add-256.png" width="20"> Add New Task
+                    </div>
+                </div>
+            </div>
+            <div class="task-container">
+                <p class="task-title">
+                    <small>#356346</small> <strong>Task Title </strong>
+                </p>
+                <div class="task-info">
+                    <div>
+                        <label>Created</label>
+                        <span>10 hours ago</span>
+                    </div>
+                    <div>
+                        <label>Owner</label>
+                        <span>Ratchile Green</span>
+                    </div>
+                    <div>
+                        <label>Due Date</label>
+                        <span>30/OCT/2020</span>
+                    </div>
+                    <div class="disc">
+                        <label>Description</label>
+                        <p>
+                            bla bla, lism lorm lep lol spam fe vim lep lism lorm lep lol spam fe vim le lism lorm lep lol spam fe vim le lism lorm lep lol spam fe vim le
+                            <img src="">
+                        </p>
+                    </div>
+                    <div>
+                        <label>Members</label>
+                        <span class="members">
+                            <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-01-256.png"/>
+                            <img src="https://cdn0.iconfinder.com/data/icons/famous-character-vol-2-colored/48/JD-02-128.png"/>
+                            <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-08-256.png"/>
+                            <img src="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-22-256.png"/>
+                            <div class="extra">
+                                +6
+                            </div>
+                        </span>
+                    </div>
+                    <div class="attaches">
+                        <label>Attachments</label>
+                        <a class="attch">
+                            <img src="https://cdn1.iconfinder.com/data/icons/leto-blue-files/64/file_document-41-256.png" width="32"> <span href="#">issue_logs.log <small>(300kb)</small></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="chat">
+                    <div class="chat-input">
+                        <input type="text" placeholder="Write a comment">
+                        <button type="button"><img src="https://www.iconfinder.com/data/icons/dark-action-bar-2/96/send-128.png"></button>
+                        <button type="button"><img src="https://www.iconfinder.com/data/icons/utilities-part-3/64/link_two-128.png"></button>
+                    </div>
+                </div>
+
                 </div>
             </div>
         </div>
+        </div>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.6/lib/draggable.bundle.js"></script>
+    <script src="./public/js/main.js"></script>
 </body>
 </html>
